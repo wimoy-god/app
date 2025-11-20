@@ -1,0 +1,12 @@
+body{font-family:Segoe UI,Arial,Helvetica,sans-serif;background:#f6f7fb;color:#222;margin:0;padding:20px}
+.container{max-width:900px;margin:0 auto;background:#fff;padding:20px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.08)}
+h1{margin-top:0}
+form input[type=text], form input[type=datetime-local], form input[type=number], form textarea{width:100%;padding:8px;margin:6px 0;border:1px solid #ccc;border-radius:4px}
+.list{list-style:none;padding:0}
+.list li{padding:12px;border-bottom:1px solid #eee}
+.title{font-weight:600}
+.meta{color:#666;font-size:0.9em}
+.actions{margin-top:6px}
+.btn, a{display:inline-block;margin-left:8px;padding:6px 10px;background:#2b88d8;color:#fff;border-radius:4px;text-decoration:none}
+button{padding:6px 10px}
+.form-actions{margin-top:12px}

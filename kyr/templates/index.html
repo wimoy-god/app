@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Управление мастер-классами</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Мастер-классы</h1>
+    <form method="get" action="/">
+      <input type="text" name="q" placeholder="Поиск по названию" value="{{ q }}">
+      <button type="submit">Поиск</button>
+      <a href="/create" class="btn">Создать мастер-класс</a>
+    </form>
+
+    {% if masters %}
+      <ul class="list">
+      {% for mc in masters %}
+        <li>
+          <div class="title"><a href="/detail/{{ mc.id }}">{{ mc.title }}</a></div>
+          <div class="meta">{{ mc.instructor or '—' }} | {{ mc.date.strftime('%Y-%m-%d %H:%M') if mc.date else 'Дата не указана' }} | Мест: {{ mc.seats }}</div>
+          <div class="actions">
+            <a href="/edit/{{ mc.id }}">Ред.</a>
+            <form method="post" action="/delete/{{ mc.id }}" onsubmit="return confirm('Удалить?');" style="display:inline">
+              <button type="submit">Удалить</button>
+            </form>
+          </div>
+        </li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>Список мастер-классов пуст.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

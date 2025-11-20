@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ master.title }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>{{ master.title }}</h1>
+    <div class="meta">Инструктор: {{ master.instructor or '—' }}</div>
+    <div class="meta">Дата: {{ master.date.strftime('%Y-%m-%d %H:%M') if master.date else 'Не указана' }}</div>
+    <div class="meta">Мест: {{ master.seats }}</div>
+    <div class="description">{{ master.description or '—' }}</div>
+    <p>
+      <a href="/edit/{{ master.id }}">Редактировать</a> |
+      <a href="/">Назад к списку</a>
+    </p>
+  </div>
+</body>
+</html>
